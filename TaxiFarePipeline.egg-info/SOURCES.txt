@@ -1,0 +1,12 @@
+setup.py
+TaxiFarePipeline/__init__.py
+TaxiFarePipeline/data.py
+TaxiFarePipeline/encoders.py
+TaxiFarePipeline/gcp.py
+TaxiFarePipeline/trainer.py
+TaxiFarePipeline/utils.py
+TaxiFarePipeline.egg-info/PKG-INFO
+TaxiFarePipeline.egg-info/SOURCES.txt
+TaxiFarePipeline.egg-info/dependency_links.txt
+TaxiFarePipeline.egg-info/requires.txt
+TaxiFarePipeline.egg-info/top_level.txt
