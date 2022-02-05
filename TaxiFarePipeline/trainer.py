@@ -3,7 +3,7 @@ from termcolor import colored
 import mlflow
 from TaxiFarePipeline.data import get_data, clean_data
 from TaxiFarePipeline.encoders import TimeFeaturesEncoder, DistanceTransformer
-from TaxiFarePipeline.utils import compute_rmse
+from TaxiFarePipeline.utils import compute_rmse, df_optimized
 from memoized_property import memoized_property
 from mlflow.tracking import MlflowClient
 from sklearn.compose import ColumnTransformer
@@ -41,7 +41,8 @@ class Trainer(object):
     def get_data():
         """method to get the training data (or a portion of it) from google cloud bucket"""
         df = pd.read_csv(f"gs://{BUCKET_NAME}/{BUCKET_TRAIN_DATA_PATH}", nrows=1000)
-        return df
+        optimized_df = df_optimized(df,verbose=True, **kwargs)
+        return optimized_df
 
     def set_pipeline(self):
         """defines the pipeline as a class attribute"""
